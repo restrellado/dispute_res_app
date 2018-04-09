@@ -62,4 +62,9 @@ dpr <- dpr %>%
     )
 
 # Turn state names into lower case letters 
-dpr$State <- tolower(dpr$State)
+dpr$State <- tolower(dpr$State) 
+
+# Gather variables 
+test <- dpr %>% 
+  gather(Category, Count, -c(Year, State)) 
+test
